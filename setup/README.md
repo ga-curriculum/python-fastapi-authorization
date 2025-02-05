@@ -1,5 +1,5 @@
 <h1>
-  <span class="headline">[tktk Headline]</span>
+  <span class="headline">FastAPI Authorization</span>
   <span class="subhead">Setup</span>
 </h1>
 
@@ -13,11 +13,11 @@ Open your Terminal application and navigate to your <code class="filepath">~/cod
 cd ~/code/ga/lectures
 ```
 
-Make a new directory called <code class="filepath">tktk-module-name</code>, then enter this directory:
+Make a new directory called <code class="filepath">python-fastapi-authorization</code>, then enter this directory:
 
 ```bash
-mkdir tktk-module-name
-cd tktk-module-name
+mkdir python-fastapi-authorization
+cd python-fastapi-authorization
 ```
 
 Open the contents of the directory in VS Code:
