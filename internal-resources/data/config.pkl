@@ -20,17 +20,36 @@ repo {
 
 courses {
   new {
+    name = "apd"
+    microlessons {
+      // Add microlessons here, in the order they should be delivered
+      mls.setup
+      mls.concepts
+      mls.fastapisDependsFunction
+      mls.decodingJwtTokens
+      mls.securingFastAPIRoutes
+      mls.managingModelRelationships
+      mls.modifyingTheTeaSerializer
+      mls.updatingTheSeedFile
+      mls.associatingUserDataWithNewRecords
+      mls.verifyingPermissionsForPutAndDelete
+    }
+  }
+  new {
     // Do not remove this fallback course!
     name = "fallback"
     microlessons {
       // Add microlessons here, in the order they should be delivered
       mls.setup
       mls.concepts
-      mls.microlesson01
-      // You can make course-specific adjustments using a syntax like this:
-      (mls.microlesson02) {
-        type = "Level Up content"
-      }
+      mls.fastapisDependsFunction
+      mls.decodingJwtTokens
+      mls.securingFastAPIRoutes
+      mls.managingModelRelationships
+      mls.modifyingTheTeaSerializer
+      mls.updatingTheSeedFile
+      mls.associatingUserDataWithNewRecords
+      mls.verifyingPermissionsForPutAndDelete
     }
   }
 }

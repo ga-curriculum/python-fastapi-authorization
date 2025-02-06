@@ -3,33 +3,42 @@
   <span class="subhead">Concepts</span>
 </h1>
 
-**Learning objective:** By the end of this lesson, students will be able to tktk
+**Learning objective:** By the end of this lesson, students will be able to explain how authorization helps control access to API routes and resources, focusing on route-level and object-level permissions.
 
-# Authorization Intro - Concepts
+## What is Authorization?
 
-**Learning objective:** By the end of this lesson, you will be able to **explain** how we can use authorization techniques to implement route and object level permissions.
+In this lesson, we will focus on **authorization**, which is different from **authentication**.
 
-## Authorization Overview
+| Concept            | Definition                                                                                      |
+| ------------------ | ----------------------------------------------------------------------------------------------- |
+| **Authentication** | Confirms _who_ the user is. For example, logging in with a username and password.               |
+| **Authorization**  | Determines _what_ the user is allowed to do. For example, restricting access to certain routes. |
 
-Now that our app is _authenticated_, we'll be moving on to _authorization_. The difference again:
+There are two main types of authorization we will cover:
 
-**Authentication**: Are you who you say you are?
+1. **Route-level permissions** – Restrict access to specific API routes.
+   - Example: Only logged-in users can create a new tea entry using the `POST /teas` route.
+2. **Object-level permissions** – Restrict access to specific resources based on ownership.
+   - Example: Only the user who created a tea entry can update or delete it.
 
-**Authorization**: Are you allowed to do what you are trying to do?
+In this lesson, we will first focus on **route-level permissions** and then move on to object-level permissions in later lessons.
 
-Authorization allows us to add permissions to our API in different ways. The 2 ways of authorizing that we'll be looking at:
+## Using FastAPI's `Depends` for authorization
 
-1. **Route level permissions**. This will restrict and control who can access which routes. e.g. Only logged in users (have a valid token) can POST a tea.
-2. **Object level permissions**. This will restrict and control the operations someone can perform on certain resources. e.g. Only the user who created a tea can update that tea.
+Before we can implement route-level permissions, we need to understand how FastAPI’s `Depends` function works.
 
-We'll be looking at point 1 first. Before we jump into that, we need to briefly talk about FastAPI's **Depends**.
+### What is `Depends`?
 
-This will be necessary, because the `dependency injection` pattern will allow us to annotate certain functions as routes that are only accessible to logged in users. Dependency injection in a FastAPI app is a design pattern that allows you to inject dependencies (like our database connections, authentication mechanisms, or other utility functions) directly into your routes and other components of the application.
+FastAPI uses a design pattern called **dependency injection**, which allows us to **inject functions** (like authentication checks) into our routes.
 
-`Depends` will allow to us to run some verification code, on whichever routes we choose, _before_ the user's request ever reaches the constoller logic that access the database. If the expected dependency is missing, or invalid, an error while be thrown, thereby preventing unauthorized operations.
+The `Depends` function helps us **run checks before the route is executed**. This means we can:
 
-To learn more about `dependency injection` software design pattern, you can checkout a more technical explaination [here](https://martinfowler.com/articles/injection.html#InversionOfControl).
+- Make sure users are logged in before they can access certain routes.
+- Validate authentication tokens before running the route’s actions.
+- Automatically block unauthorized requests and send an error message.
 
-## Next Steps
+### How Does `Depends` Work?
 
-In this module we will focus just on setting up and using `Depends` in a test API. Once we understand how FastAPI dependency injection works, we will explore how to use `Depends` to check inbound request for a JWT, an authenticated user's token.
+1. We create a function that checks if the user is logged in or has a valid token (authentication check).
+2. We use the `Depends` function in our route to **require** that this check is done before executing the route.
+3. If the check fails (for example, the user is not logged in), FastAPI will **block the request** and send a `403 Forbidden` error.

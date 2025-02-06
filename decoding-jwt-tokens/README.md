@@ -3,7 +3,7 @@
   <span class="subhead">Decoding JWT tokens</span>
 </h1>
 
-**Learning objective:** By the end of this lesson, you will be able to **implement** JWT tokens decoding to authenticate user's API requests.
+**Learning objective:** By the end of this lesson, you will be able to implement JWT tokens decoding to authenticate user's API requests.
 
 ## Securing FastAPI routes
 

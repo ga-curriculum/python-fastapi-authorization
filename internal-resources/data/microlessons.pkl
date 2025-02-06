@@ -16,16 +16,58 @@ concepts = new Template.Microlesson {
   videoUrl = ""
 }
 
-microlesson01 = new Template.Microlesson {
-  friendlyName = "Microlesson 01"
-  dirName = "microlesson-01"
+fastapisDependsFunction = new Template.Microlesson {
+  friendlyName = "FastAPI's `Depends` Function"
+  dirName = "fastapis-depends-function"
   type = "Content"
   videoUrl = ""
 }
 
-microlesson02 = new Template.Microlesson {
-  friendlyName = "Microlesson 02"
-  dirName = "microlesson-02"
+decodingJwtTokens = new Template.Microlesson {
+  friendlyName = "Decoding JWT Tokens"
+  dirName = "decoding-jwt-tokens"
+  type = "Content"
+  videoUrl = ""
+}
+
+securingFastAPIRoutes = new Template.Microlesson {
+  friendlyName = "Securing FastAPI Routes"
+  dirName = "securing-fastapi-routes"
+  type = "Content"
+  videoUrl = ""
+}
+
+managingModelRelationships = new Template.Microlesson {
+  friendlyName = "Managing Model Relationships"
+  dirName = "managing-model-relationships"
+  type = "Content"
+  videoUrl = ""
+}
+
+modifyingTheTeaSerializer = new Template.Microlesson {
+  friendlyName = "Modifying the Tea Serializer"
+  dirName = "modifying-the-tea-serializer"
+  type = "Content"
+  videoUrl = ""
+}
+
+updatingTheSeedFile = new Template.Microlesson {
+  friendlyName = "Updating the Seed File"
+  dirName = "updating-the-seed-file"
+  type = "Content"
+  videoUrl = ""
+}
+
+associatingUserDataWithNewRecords = new Template.Microlesson {
+  friendlyName = "Associating User Data with New Records"
+  dirName = "associating-user-data-with-new-records"
+  type = "Content"
+  videoUrl = ""
+}
+
+verifyingPermissionsForPutAndDelete = new Template.Microlesson {
+  friendlyName = "Verifying Permissions for `PUT` and `DELETE`"
+  dirName = "verifying-permissions-for-put-and-delete"
   type = "Content"
   videoUrl = ""
 }

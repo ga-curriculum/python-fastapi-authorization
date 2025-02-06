@@ -13,7 +13,7 @@ FastAPI's `Depends` is a core feature of the framework. It allows you to define 
 
 ### What is `Depends`?
 
-`Depends` is a function that declares dependencies for your route functions.
+[`Depends`](https://fastapi.tiangolo.com/reference/dependencies/#depends) is a function that declares dependencies for your route functions.
 
 A dependency is anything your route needs to work correctly. Examples include:
 
