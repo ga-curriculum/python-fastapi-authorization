@@ -81,7 +81,7 @@ Now, we modify the `UserModel` to include a relationship with `TeaModel`.
 from sqlalchemy import Column, Integer, String
 from .base import BaseModel
 from passlib.context import CryptContext
-from datetime import datetime, timedelta
+from datetime import datetime, timezone, timedelta
 import jwt
 from config.environment import secret
 from sqlalchemy.orm import relationship # add relationship
@@ -101,7 +101,7 @@ class UserModel(BaseModel):
     # NEW: Relationship - a user can have multiple teas
     teas = relationship('TeaModel', back_populates='user')
 
-     def set_password(self, password: str):
+    def set_password(self, password: str):
         self.password_hash = pwd_context.hash(password)
 
     def verify_password(self, password: str) -> bool:
@@ -109,8 +109,8 @@ class UserModel(BaseModel):
 
     def generate_token(self):
         payload = {
-            "exp": datetime.utcnow() + timedelta(days=1),
-            "iat": datetime.utcnow(),
+            "exp": datetime.now(timezone.utc) + timedelta(days=1),
+            "iat": datetime.now(timezone.utc),
             "sub": self.id,
         }
 
