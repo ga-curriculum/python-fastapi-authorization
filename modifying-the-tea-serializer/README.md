@@ -28,14 +28,14 @@ We need to modify the `TeaSchema` to include the user information.
 from pydantic import BaseModel
 from typing import Optional, List
 from .comment import CommentSchema
-from .user import UserSchema  # Import the User schema
+from .user import UserResponseSchema  # Import the UserResponseSchema without the password
 
 class TeaSchema(BaseModel):
     id: Optional[int] = True
     name: str
     in_stock: bool
     rating: int
-    user: UserSchema  # New: Each tea belongs to a user
+    user: UserResponseSchema # New : returns user into with tea
     comments: List[CommentSchema] = []
 
     class Config:
@@ -47,6 +47,6 @@ class TeaSchema(BaseModel):
 
 - **Includes the user data**: Each tea object will now show details about the user who created it.
 - **Uses `orm_mode = True`**: This allows SQLAlchemy models to be converted into Pydantic schemas correctly.
-- **Automatically populates user details**: When retrieving tea data, the API response will now include the associated user's information.
+- **Automatically populates user details**: When retrieving tea data, the API response will now include the associated user's information without sensitive data like the password. 
 
 Now that we've updated the serializer, we should test our changes to ensure the user association appears correctly in API responses.
