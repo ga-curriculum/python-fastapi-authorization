@@ -20,7 +20,8 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from models.tea import TeaModel
 from models.user import UserModel
-from serializers.tea import TeaModel as TeaSchema, TeaCreate as TeaCreateSchema
+from serializers.tea import TeaSchema, TeaCreate as TeaCreateSchema
+
 from typing import List
 from database import get_db
 from dependencies.get_current_user import get_current_user
