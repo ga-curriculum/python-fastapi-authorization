@@ -35,7 +35,7 @@ class TeaSchema(BaseModel):
     name: str
     in_stock: bool
     rating: int
-    user: UserResponseSchema # New : returns user into with tea
+    user: UserResponseSchema # New : returns user info with tea
     comments: List[CommentSchema] = []
 
     class Config:
