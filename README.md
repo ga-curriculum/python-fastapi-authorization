@@ -35,11 +35,11 @@ This module covers the fundamentals of **authorization** in FastAPI, ensuring th
 
 ### Starter code
 
-🟢 [Starter code](https://git.generalassemb.ly/modular-curriculum-all-courses/python-fastapi-authentication-solution)
+🟢 [Starter code](https://github.com/ga-curriculum/python-fastapi-authentication-solution)
 
 ### Solution code
 
-🏁 [Solution code](https://git.generalassemb.ly/modular-curriculum-all-courses/python-fastapi-authorization-solution)
+🏁 [Solution code](https://github.com/ga-curriculum/python-fastapi-authorization-solution)
 
 ### Course landing pages
 
